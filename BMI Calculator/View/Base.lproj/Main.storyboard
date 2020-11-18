@@ -48,11 +48,13 @@
                                             <constraint firstAttribute="height" constant="21" id="u7I-Gs-9V3"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TJf-Be-YUe" userLabel="Height Slider">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="TJf-Be-YUe" userLabel="Height Slider">
                                         <rect key="frame" x="-2" y="626" width="378" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="bhN-wP-Z2y"/>
                                         </constraints>
+                                        <color key="minimumTrackTintColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="heightSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ftd-G5-Ytu"/>
                                         </connections>
@@ -77,11 +79,13 @@
                                             <constraint firstAttribute="height" constant="21" id="Jhz-64-Gts"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Rb-XR-TTC" userLabel="Weight Slider">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="8Rb-XR-TTC" userLabel="Weight Slider">
                                         <rect key="frame" x="-2" y="707" width="378" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="vRZ-QZ-08I"/>
                                         </constraints>
+                                        <color key="minimumTrackTintColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="weightSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HjR-nk-hji"/>
                                         </connections>
@@ -121,6 +125,7 @@
                         <outlet property="heightSlider" destination="TJf-Be-YUe" id="AjM-7v-dQu"/>
                         <outlet property="weightLabel" destination="ClZ-Rj-wde" id="evT-cy-DFI"/>
                         <outlet property="weightSlider" destination="8Rb-XR-TTC" id="w2F-qo-qrg"/>
+                        <segue destination="9mh-IL-tp9" kind="presentation" identifier="goToResult" id="Woq-1b-ksY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,14 +137,14 @@
             <objects>
                 <viewController id="9mh-IL-tp9" userLabel="Result View Controller" customClass="ResultViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZD-yZ-M2d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="SY1-va-98J">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-h9-5up">
-                                <rect key="frame" x="91" y="361" width="232" height="174"/>
+                                <rect key="frame" x="91" y="334" width="232" height="174"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR RESULT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDZ-ri-F3I" userLabel="YOUR RESULT">
                                         <rect key="frame" x="0.0" y="0.0" width="232" height="42"/>
@@ -162,7 +167,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1F-yt-4fN">
-                                <rect key="frame" x="20" y="811" width="374" height="51"/>
+                                <rect key="frame" x="20" y="757" width="374" height="51"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="sJa-fO-GQu"/>
@@ -187,9 +192,10 @@
                             <constraint firstItem="SY1-va-98J" firstAttribute="leading" secondItem="XZD-yZ-M2d" secondAttribute="leading" id="xMp-i3-who"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Kqh-nq-aEq"/>
                     <connections>
                         <outlet property="adviceLabel" destination="MQj-i3-XMq" id="jGv-jC-e0A"/>
-                        <outlet property="bmiValue" destination="bsa-pO-rv5" id="jsb-0h-zij"/>
+                        <outlet property="bmiLabel" destination="bsa-pO-rv5" id="c0j-PZ-b32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="007-GL-sfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

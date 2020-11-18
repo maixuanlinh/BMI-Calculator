@@ -22,8 +22,8 @@ class CalculateViewController: UIViewController {
         
     }
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        let weight = String(format: "&.0f", sender.value)
-        weightLabel.text = "\(weight)m"
+        let weight = String(format: "%.0f", sender.value)
+        weightLabel.text = "\(weight)kg"
     }
     @IBAction func calculatePressed(_ sender: UIButton) {
         let height = heightSlider.value

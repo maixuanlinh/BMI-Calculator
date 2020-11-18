@@ -24,6 +24,7 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     @IBAction func recalculatePressed(_ sender: UIButton) {
